@@ -11,9 +11,9 @@ var wind_rng = RandomNumberGenerator.new()
 var wind_chance = 0.1
 var wind_strength = 0
 var wind_duration = 10
-var wind_variation = 10
+var wind_variation = 100
 
-var max_speed = 10
+var max_speed = 400
 var gravity = 400
 
 # Called when the node enters the scene tree for the first time.
@@ -69,7 +69,7 @@ func turnOffWind():
 	windRight.turnOff()
 
 
-func _on_static_body_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body: Node2D) -> void:
 	death()
 	body.queue_free()
 	pass # Replace with function body.
