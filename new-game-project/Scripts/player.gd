@@ -1,26 +1,25 @@
-extends Node
+extends CharacterBody2D
 
 @export var animatedSprite: AnimatedSprite2D
-var ang = 0
-var ang_velocity = 0.0 # measured in degrees per second
-var ang_accel = 0.0 # measured in degrees per second per second
+var accel = Vector2(0, 0)
+var velX = 0
+var velY = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#velocity.x = 50
+	#velocity.y = 50
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	print("x velocity " + str(velX))
+	#print("x accel " + str(accel.x))
 	# apply physics vectors
-	ang += ang_velocity * delta
-	ang_velocity += ang_accel * delta
-	if(ang_velocity < 0):
-		animatedSprite.play("tilt_left")
-	elif(ang_velocity > 0):
-		animatedSprite.play("tilt_right")
-	else:
-		animatedSprite.play("idle")
+	velX += accel.x
+	velY += accel.y
+	velocity.x = velX
+	velocity.y = velY
+	move_and_slide()
 	pass
-
-func set_accel(change_accel : float) -> void:
-	ang_accel += change_accel

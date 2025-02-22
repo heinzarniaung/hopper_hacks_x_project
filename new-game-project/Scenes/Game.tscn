@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfookppohanda"]
+[gd_scene load_steps=5 format=3 uid="uid://ct27u54ckrqh2"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_mhebs"]
 [ext_resource type="Script" path="res://Scripts/wind.gd" id="2_hijoe"]
-[ext_resource type="PackedScene" uid="uid://b5xmdaxpdgffq" path="res://Scenes/wind.tscn" id="3_aqs11"]
+[ext_resource type="PackedScene" uid="uid://3dqydwv6ftib" path="res://Scenes/wind.tscn" id="3_aqs11"]
+[ext_resource type="PackedScene" uid="uid://baacxuhbnjo4f" path="res://Scenes/player.tscn" id="4_1jy6u"]
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("windLeft", "windRight")]
 script = ExtResource("1_mhebs")
@@ -45,3 +46,6 @@ flip_h = true
 [node name="Wind8" parent="Right" instance=ExtResource("3_aqs11")]
 position = Vector2(821, 203)
 flip_h = true
+
+[node name="Player" parent="." instance=ExtResource("4_1jy6u")]
+position = Vector2(551, 291)
