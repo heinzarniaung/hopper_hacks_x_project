@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=4 uid="uid://cfookppohanda"]
+[gd_scene load_steps=12 format=4 uid="uid://cfookppohanda"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_mhebs"]
 [ext_resource type="Texture2D" uid="uid://dm0xh0ip5npc6" path="res://Art/sky.png" id="2_asmcl"]
 [ext_resource type="Script" path="res://Scripts/wind.gd" id="2_hijoe"]
 [ext_resource type="PackedScene" uid="uid://b5xmdaxpdgffq" path="res://Scenes/wind.tscn" id="3_aqs11"]
-[ext_resource type="TileSet" uid="uid://dg7xjjhpffju7" path="res://Art/ship.tres" id="4_5i3mf"]
+[ext_resource type="TileSet" uid="uid://dau7b6ghakti3" path="res://Art/ship.tres" id="4_5i3mf"]
 [ext_resource type="Texture2D" uid="uid://b17rox2wd1jrn" path="res://Art/water.png" id="5_21p4n"]
 [ext_resource type="Texture2D" uid="uid://7sxt0x15hves" path="res://Art/sealife.png" id="6_4sn6e"]
 [ext_resource type="Script" path="res://Scenes/static_body_2d.gd" id="6_hwkly"]
 [ext_resource type="PackedScene" uid="uid://baacxuhbnjo4f" path="res://Scenes/player.tscn" id="8_xawga"]
+[ext_resource type="TileSet" uid="uid://dyjgj1ub1q0j3" path="res://Art/juston.tres" id="9_twj6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_leshg"]
 size = Vector2(384.995, 20)
@@ -69,10 +70,11 @@ scale = Vector2(5.88542, 4.34463)
 script = ExtResource("6_hwkly")
 
 [node name="Water" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-1.18938, 11.9688)
 texture = ExtResource("5_21p4n")
 
 [node name="Area_Water" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0.849556, 0.920677)
+position = Vector2(-0.679647, 12.6593)
 shape = SubResource("RectangleShape2D_leshg")
 
 [node name="Sealife" type="Sprite2D" parent="."]
@@ -82,3 +84,7 @@ texture = ExtResource("6_4sn6e")
 
 [node name="Player" parent="." instance=ExtResource("8_xawga")]
 position = Vector2(532, 322)
+
+[node name="plank" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAGAAYAAAACAAQAAAAHAAYAAAACAAQAAAAIAAYAAAACAAQAAAAJAAYAAAACAAQAAAAKAAYAAAACAAQAAAALAAYAAAACAAQAAAAFAAYAAAACAAQAAAAEAAYAAAACAAQAAAADAAYAAAACAAQAAAA=")
+tile_set = ExtResource("9_twj6w")
