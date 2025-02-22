@@ -23,11 +23,15 @@ func _process(delta: float) -> void:
 	
 
 	# Get accelerometer input for movement
-	velocity.x = Input.get_accelerometer().normalized().x * speed
-
+	velocity.x += accel.x
+	velocity.y += accel.y
+	# apply physics
+	move_and_slide()
 	# Play animation based on angular velocity
 	if velocity.x < 0:
+	if velocity.x < 0:
 		animatedSprite.play("tilt_left")
+	elif velocity.x > 0:
 	elif velocity.x > 0:
 		animatedSprite.play("tilt_right")
 	else:
