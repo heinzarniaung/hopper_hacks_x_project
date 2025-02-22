@@ -11,9 +11,9 @@ var wind_rng = RandomNumberGenerator.new()
 var wind_chance = 0.1
 var wind_strength = 0
 var wind_duration = 10
-var wind_variation = 100
+var wind_variation = 10
 
-var max_speed = 400
+var max_speed = 10
 var gravity = 400
 
 # Called when the node enters the scene tree for the first time.
