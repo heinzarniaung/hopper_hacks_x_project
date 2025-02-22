@@ -1,6 +1,6 @@
 extends Node
 
-var saveFile = "user://highscore.save"
+var saveFile = "highscore.save"
 var score = 0
 var highScore = 0
 #Use this for unlocks if time permits
@@ -12,10 +12,10 @@ func _ready() -> void:
 		var save = FileAccess.open(saveFile, FileAccess.READ)
 		var json_string = save.get_line()
 		var json = JSON.new()
-		json = json.parse(json_string)
+		var line = json.parse(json_string)
 		var data = json.data
-		highScore = data[0]
-		doubloons = data[1]
+		highScore = data.get("doubloons")
+		doubloons = data.get("highScore")
 			
 	pass # Replace with function body.
 	
@@ -33,6 +33,7 @@ func save_score():
 	save.store_line(json_data)
 	
 func defeat():
+	print(score)
 	if(score > highScore):
 		highScore = score
 	score = 0
