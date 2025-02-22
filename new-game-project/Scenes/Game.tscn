@@ -81,7 +81,7 @@ scale = Vector2(3.0651, 1.66667)
 texture = ExtResource("6_4sn6e")
 
 [node name="Player" parent="." instance=ExtResource("8_xawga")]
-position = Vector2(532, 322)
+position = Vector2(439, 336)
 
 [node name="plank" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAGAAYAAAACAAQAAAAHAAYAAAACAAQAAAAIAAYAAAACAAQAAAAJAAYAAAACAAQAAAAKAAYAAAACAAQAAAALAAYAAAACAAQAAAAFAAYAAAACAAQAAAAEAAYAAAACAAQAAAADAAYAAAACAAQAAAA=")
