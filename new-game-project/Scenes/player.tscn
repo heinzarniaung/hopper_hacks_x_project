@@ -44,6 +44,7 @@ animations = [{
 "name": &"tilt_right",
 "speed": 5.0
 }]
+metadata/_edit_group_ = true
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite")]
 script = ExtResource("1_33bar")
