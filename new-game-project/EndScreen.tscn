@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm4xypww6ctyq"]
+
+[ext_resource type="FontFile" uid="uid://dedo426e6nyim" path="res://pixel_pirate.ttf" id="1_1vwkn"]
+
+[node name="EndScreen" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 523.0
+offset_top = 435.0
+offset_right = 745.0
+offset_bottom = 515.0
+theme_override_fonts/font = ExtResource("1_1vwkn")
+text = "Try Again?"
