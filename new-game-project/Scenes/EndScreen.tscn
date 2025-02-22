@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ck7ysqna4vjoh"]
 
 [ext_resource type="Script" path="res://Scripts/end_screen.gd" id="1_aa6t2"]
-[ext_resource type="Texture2D" uid="uid://b3qpfi14383kx" path="res://Art/Endgame.png" id="2_dwtl8"]
+[ext_resource type="Texture2D" uid="uid://bvfc72ajmh8gh" path="res://Art/endScreen.jpg" id="2_bol66"]
 [ext_resource type="FontFile" uid="uid://bg4beac7wm06f" path="res://pixel_pirate.ttf" id="3_5ktdk"]
 
 [node name="EndScreen" type="Control"]
@@ -17,8 +17,8 @@ script = ExtResource("1_aa6t2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(575, 326)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_dwtl8")
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("2_bol66")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
