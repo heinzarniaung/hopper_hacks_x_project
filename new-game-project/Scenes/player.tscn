@@ -45,8 +45,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite")]
 script = ExtResource("1_33bar")
+animatedSprite = NodePath("PirateSprite")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_l7tqi")
@@ -58,4 +59,3 @@ animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -100)
-zoom = Vector2(2, 2)
