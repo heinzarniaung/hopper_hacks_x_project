@@ -29,9 +29,7 @@ func _process(delta: float) -> void:
 	move_and_slide()
 	# Play animation based on angular velocity
 	if velocity.x < 0:
-	if velocity.x < 0:
 		animatedSprite.play("tilt_left")
-	elif velocity.x > 0:
 	elif velocity.x > 0:
 		animatedSprite.play("tilt_right")
 	else:

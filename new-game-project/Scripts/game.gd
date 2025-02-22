@@ -8,8 +8,6 @@ var time_elapsed = 0 # in seconds
 var time_till_next = 5
 var wind_rng = RandomNumberGenerator.new()
 
-var wind_variation : float = 10 # in velocity units
-
 var wind_chance = 0.1
 var wind_strength = 0
 var wind_duration = 10
@@ -43,9 +41,7 @@ func _process(delta: float) -> void:
 		wind_strength = wind_rng.randf_range(-wind_variation,wind_variation)
 		time_till_next = (wind_rng.randf_range(0,1) * 5) + 10
 		if(wind_strength > 0):
-		if(wind_strength > 0):
 			activateWindLeft()
-		elif(wind_strength < 0):
 		elif(wind_strength < 0):
 			activateWindRight()
 	if time_elapsed > wind_duration:
