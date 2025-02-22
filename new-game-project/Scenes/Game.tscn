@@ -1,211 +1,47 @@
-[gd_scene load_steps=21 format=3 uid="uid://cfookppohanda"]
+[gd_scene load_steps=4 format=3 uid="uid://cfookppohanda"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_mhebs"]
 [ext_resource type="Script" path="res://Scripts/wind.gd" id="2_hijoe"]
-[ext_resource type="Texture2D" uid="uid://der8e76qsaetb" path="res://Art/windsheet.png" id="2_ibduw"]
+[ext_resource type="PackedScene" uid="uid://b5xmdaxpdgffq" path="res://Scenes/wind.tscn" id="3_aqs11"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v1em7"]
-atlas = ExtResource("2_ibduw")
-region = Rect2(0, 0, 514, 514)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3hwyg"]
-atlas = ExtResource("2_ibduw")
-region = Rect2(514, 0, 514, 514)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_205vx"]
-atlas = ExtResource("2_ibduw")
-region = Rect2(1028, 0, 514, 514)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ovauf"]
-atlas = ExtResource("2_ibduw")
-region = Rect2(1542, 0, 514, 514)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rjmg4"]
-atlas = ExtResource("2_ibduw")
-region = Rect2(2056, 0, 514, 514)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ywcgm"]
-atlas = ExtResource("2_ibduw")
-region = Rect2(2570, 0, 514, 514)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3lt6u"]
-atlas = ExtResource("2_ibduw")
-region = Rect2(3084, 0, 514, 514)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fxsle"]
-atlas = ExtResource("2_ibduw")
-region = Rect2(3598, 0, 514, 514)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_81l7h"]
-atlas = ExtResource("2_ibduw")
-region = Rect2(4112, 0, 514, 514)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_si6vb"]
-atlas = ExtResource("2_ibduw")
-region = Rect2(4626, 0, 514, 514)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ywvj1"]
-atlas = ExtResource("2_ibduw")
-region = Rect2(5140, 0, 514, 514)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qpp7t"]
-atlas = ExtResource("2_ibduw")
-region = Rect2(5654, 0, 514, 514)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fm5a8"]
-atlas = ExtResource("2_ibduw")
-region = Rect2(6168, 0, 514, 514)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sunns"]
-atlas = ExtResource("2_ibduw")
-region = Rect2(6682, 0, 514, 514)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cbqkm"]
-atlas = ExtResource("2_ibduw")
-region = Rect2(7196, 0, 514, 514)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l158r"]
-atlas = ExtResource("2_ibduw")
-region = Rect2(7710, 0, 514, 514)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_s2kvc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v1em7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3hwyg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_205vx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ovauf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rjmg4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ywcgm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3lt6u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fxsle")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_81l7h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_si6vb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ywvj1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qpp7t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fm5a8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sunns")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cbqkm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l158r")
-}],
-"loop": true,
-"name": &"wind",
-"speed": 5.0
-}]
-
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("windLeft", "windRight")]
 script = ExtResource("1_mhebs")
+windLeft = NodePath("Left")
+windRight = NodePath("Right")
 
 [node name="Left" type="Node2D" parent="." node_paths=PackedStringArray("windArrays")]
+visible = false
 script = ExtResource("2_hijoe")
 windArrays = [NodePath("Wind"), NodePath("Wind2"), NodePath("Wind3"), NodePath("Wind4")]
 
-[node name="Wind" type="AnimatedSprite2D" parent="Left"]
-position = Vector2(151, 389)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_s2kvc")
-animation = &"wind"
-speed_scale = 2.0
-offset = Vector2(0, 6)
+[node name="Wind" parent="Left" instance=ExtResource("3_aqs11")]
 
-[node name="Wind2" type="AnimatedSprite2D" parent="Left"]
-position = Vector2(270, 447)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_s2kvc")
-animation = &"wind"
-frame_progress = 0.841922
-speed_scale = 2.0
-offset = Vector2(0, 6)
+[node name="Wind2" parent="Left" instance=ExtResource("3_aqs11")]
+position = Vector2(210, 149)
 
-[node name="Wind3" type="AnimatedSprite2D" parent="Left"]
-position = Vector2(207, 207)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_s2kvc")
-animation = &"wind"
-frame_progress = 0.841922
-speed_scale = 2.0
-offset = Vector2(0, 6)
+[node name="Wind3" parent="Left" instance=ExtResource("3_aqs11")]
+position = Vector2(119, 214)
 
-[node name="Wind4" type="AnimatedSprite2D" parent="Left"]
-position = Vector2(259, 295)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_s2kvc")
-animation = &"wind"
-frame_progress = 0.841922
-speed_scale = 2.0
-offset = Vector2(0, 6)
+[node name="Wind4" parent="Left" instance=ExtResource("3_aqs11")]
+position = Vector2(265, 291)
 
 [node name="Right" type="Node2D" parent="." node_paths=PackedStringArray("windArrays")]
-position = Vector2(862, -21)
+visible = false
 script = ExtResource("2_hijoe")
-windArrays = [NodePath("Wind"), NodePath("Wind2"), NodePath("Wind3"), NodePath("Wind4")]
+windArrays = [NodePath("Wind5"), NodePath("Wind6"), NodePath("Wind7"), NodePath("Wind8")]
 
-[node name="Wind" type="AnimatedSprite2D" parent="Right"]
-position = Vector2(145, 339)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_s2kvc")
-animation = &"wind"
-speed_scale = 2.0
-offset = Vector2(0, 6)
+[node name="Wind5" parent="Right" instance=ExtResource("3_aqs11")]
+position = Vector2(954, 288)
 flip_h = true
 
-[node name="Wind2" type="AnimatedSprite2D" parent="Right"]
-position = Vector2(70, 247)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_s2kvc")
-animation = &"wind"
-frame_progress = 0.841922
-speed_scale = 2.0
-offset = Vector2(0, 6)
+[node name="Wind6" parent="Right" instance=ExtResource("3_aqs11")]
+position = Vector2(955, 143)
 flip_h = true
 
-[node name="Wind3" type="AnimatedSprite2D" parent="Right"]
-position = Vector2(124, 195)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_s2kvc")
-animation = &"wind"
-frame_progress = 0.841922
-speed_scale = 2.0
-offset = Vector2(0, 6)
+[node name="Wind7" parent="Right" instance=ExtResource("3_aqs11")]
+position = Vector2(835, 364)
 flip_h = true
 
-[node name="Wind4" type="AnimatedSprite2D" parent="Right"]
-position = Vector2(90, 450)
-scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_s2kvc")
-animation = &"wind"
-frame_progress = 0.841922
-speed_scale = 2.0
-offset = Vector2(0, 6)
+[node name="Wind8" parent="Right" instance=ExtResource("3_aqs11")]
+position = Vector2(821, 203)
 flip_h = true

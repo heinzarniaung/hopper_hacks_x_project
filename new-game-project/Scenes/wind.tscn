@@ -1,0 +1,131 @@
+[gd_scene load_steps=19 format=3 uid="uid://b5xmdaxpdgffq"]
+
+[ext_resource type="Texture2D" uid="uid://der8e76qsaetb" path="res://Art/windsheet.png" id="1_rt2js"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1em7"]
+atlas = ExtResource("1_rt2js")
+region = Rect2(0, 0, 514, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hwyg"]
+atlas = ExtResource("1_rt2js")
+region = Rect2(514, 0, 514, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_205vx"]
+atlas = ExtResource("1_rt2js")
+region = Rect2(1028, 0, 514, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovauf"]
+atlas = ExtResource("1_rt2js")
+region = Rect2(1542, 0, 514, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjmg4"]
+atlas = ExtResource("1_rt2js")
+region = Rect2(2056, 0, 514, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywcgm"]
+atlas = ExtResource("1_rt2js")
+region = Rect2(2570, 0, 514, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lt6u"]
+atlas = ExtResource("1_rt2js")
+region = Rect2(3084, 0, 514, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxsle"]
+atlas = ExtResource("1_rt2js")
+region = Rect2(3598, 0, 514, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81l7h"]
+atlas = ExtResource("1_rt2js")
+region = Rect2(4112, 0, 514, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si6vb"]
+atlas = ExtResource("1_rt2js")
+region = Rect2(4626, 0, 514, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywvj1"]
+atlas = ExtResource("1_rt2js")
+region = Rect2(5140, 0, 514, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpp7t"]
+atlas = ExtResource("1_rt2js")
+region = Rect2(5654, 0, 514, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm5a8"]
+atlas = ExtResource("1_rt2js")
+region = Rect2(6168, 0, 514, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sunns"]
+atlas = ExtResource("1_rt2js")
+region = Rect2(6682, 0, 514, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbqkm"]
+atlas = ExtResource("1_rt2js")
+region = Rect2(7196, 0, 514, 514)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l158r"]
+atlas = ExtResource("1_rt2js")
+region = Rect2(7710, 0, 514, 514)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s2kvc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1em7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hwyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_205vx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovauf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjmg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywcgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lt6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxsle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81l7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si6vb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywvj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpp7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm5a8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sunns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbqkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l158r")
+}],
+"loop": true,
+"name": &"wind",
+"speed": 5.0
+}]
+
+[node name="Wind" type="AnimatedSprite2D"]
+position = Vector2(151, 389)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_s2kvc")
+animation = &"wind"
+speed_scale = 2.0
+offset = Vector2(0, 6)
