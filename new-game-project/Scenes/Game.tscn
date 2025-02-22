@@ -72,7 +72,6 @@ texture = ExtResource("5_21p4n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water/Area2D"]
 position = Vector2(-4.10956, 4.1299)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6t8yk")
 
 [node name="Sealife" type="Sprite2D" parent="."]
