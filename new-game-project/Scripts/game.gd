@@ -26,6 +26,9 @@ func _ready() -> void:
 	
 	pass # Replace with function body.
 
+func death():
+	Global.save_score()
+	get_tree().change_scene_to_file("res://Scenes/EndScreen.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -70,3 +73,8 @@ func turnOffWind():
 	windRight.visible = false
 	windLeft.turnOff()
 	windRight.turnOff()
+
+
+func _on_static_body_2d_body_entered(body: Node2D) -> void:
+	death()
+	pass # Replace with function body.
