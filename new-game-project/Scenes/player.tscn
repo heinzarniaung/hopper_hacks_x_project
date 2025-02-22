@@ -1,9 +1,59 @@
-[gd_scene load_steps=2 format=3 uid="uid://baacxuhbnjo4f"]
+[gd_scene load_steps=8 format=3 uid="uid://baacxuhbnjo4f"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_33bar"]
+[ext_resource type="Texture2D" uid="uid://u0cwpp2y2h8" path="res://Art/Pirate4Walk.png" id="2_adjo2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7tqi"]
+size = Vector2(39, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waesw"]
+atlas = ExtResource("2_adjo2")
+region = Rect2(0, 0, 400, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gkdq"]
+atlas = ExtResource("2_adjo2")
+region = Rect2(400, 0, 400, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ov0k"]
+atlas = ExtResource("2_adjo2")
+region = Rect2(400, 500, 400, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5yl7u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_waesw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gkdq")
+}],
+"loop": true,
+"name": &"tilt_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ov0k")
+}],
+"loop": true,
+"name": &"tilt_right",
+"speed": 5.0
+}]
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_33bar")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_l7tqi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_5yl7u")
+animation = &"idle"
