@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="New Game Project"
-run/main_scene="res://Scenes/MainMenu.tscn"
+run/main_scene="res://Scenes/Menus/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://Scripts/global.gd"
+
+[display]
+
+window/subwindows/embed_subwindows=false
 
 [rendering]
 
