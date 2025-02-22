@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm4xypww6ctyq"]
+[gd_scene load_steps=2 format=3 uid="uid://ck7ysqna4vjoh"]
 
-[ext_resource type="FontFile" uid="uid://dedo426e6nyim" path="res://pixel_pirate.ttf" id="1_1vwkn"]
+[ext_resource type="FontFile" uid="uid://bg4beac7wm06f" path="res://pixel_pirate.ttf" id="1_1vwkn"]
 
 [node name="EndScreen" type="Node2D"]
 
