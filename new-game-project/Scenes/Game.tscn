@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cfookppohanda"]
+[gd_scene load_steps=10 format=4 uid="uid://cfookppohanda"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_mhebs"]
 [ext_resource type="Texture2D" uid="uid://dm0xh0ip5npc6" path="res://Art/sky.png" id="2_asmcl"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b17rox2wd1jrn" path="res://Art/water.png" id="5_21p4n"]
 [ext_resource type="Texture2D" uid="uid://7sxt0x15hves" path="res://Art/sealife.png" id="6_4sn6e"]
 [ext_resource type="PackedScene" uid="uid://baacxuhbnjo4f" path="res://Scenes/player.tscn" id="8_xawga"]
+[ext_resource type="TileSet" uid="uid://dyjgj1ub1q0j3" path="res://Art/juston.tres" id="9_twj6w"]
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("windLeft", "windRight")]
 script = ExtResource("1_mhebs")
@@ -15,7 +16,7 @@ windLeft = NodePath("Left")
 windRight = NodePath("Right")
 
 [node name="Sky" type="Sprite2D" parent="."]
-position = Vector2(579.5, 210.5)
+position = Vector2(565, 209)
 scale = Vector2(2.00174, 1.34877)
 texture = ExtResource("2_asmcl")
 
@@ -52,7 +53,7 @@ position = Vector2(829, 330)
 flip_h = true
 
 [node name="Wind8" parent="Right" instance=ExtResource("3_aqs11")]
-position = Vector2(821, 203)
+position = Vector2(798, 75)
 flip_h = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -71,3 +72,9 @@ texture = ExtResource("6_4sn6e")
 
 [node name="Player" parent="." instance=ExtResource("8_xawga")]
 position = Vector2(532, 322)
+
+[node name="plank" type="TileMapLayer" parent="."]
+position = Vector2(798, 75)
+scale = Vector2(0.3, 0.3)
+tile_map_data = PackedByteArray("AAD2/xcAAAAEAAIAAADt/w8AAAACAAQAAADu/w8AAAACAAQAAADv/w8AAAACAAQAAADw/w8AAAACAAQAAADx/w8AAAACAAQAAADy/w8AAAACAAQAAADz/w8AAAACAAQAAAD0/w8AAAACAAQAAAD1/w8AAAACAAQAAAD2/w8AAAACAAQAAAD3/w8AAAACAAQAAAD4/w8AAAACAAQAAAD5/w8AAAACAAQAAAD6/w8AAAACAAQAAAD7/w8AAAACAAQAAAD8/w8AAAACAAQAAAD9/w8AAAACAAQAAAD+/w8AAAACAAQAAAD//w8AAAACAAQAAAAAAA8AAAACAAQAAADs/w8AAAACAAQAAADr/w8AAAACAAQAAADq/w8AAAACAAQAAADp/w8AAAACAAQAAADp/xAAAAAAAAUAAADq/xAAAAAAAAUAAADr/xAAAAAAAAUAAADs/xAAAAAAAAUAAADt/xAAAAAAAAUAAADu/xAAAAAAAAUAAADv/xAAAAAAAAUAAADw/xAAAAAAAAUAAADx/xAAAAAAAAUAAADy/xAAAAAAAAUAAADz/xAAAAAAAAUAAAD0/xAAAAAAAAUAAAD1/xAAAAAAAAUAAAD2/xAAAAAAAAUAAAD3/xAAAAAAAAUAAAD4/xAAAAAAAAUAAAD5/xAAAAAAAAUAAAD6/xAAAAAAAAUAAAD7/xAAAAAAAAUAAAD8/xAAAAAAAAUAAAD9/xAAAAAAAAUAAAD+/xAAAAAAAAUAAAD//xAAAAAAAAUAAAAAABAAAAAAAAUAAAABAA8AAAACAAQAAAACAA8AAAACAAQAAAADAA8AAAACAAQAAAAEAA8AAAACAAQAAAAFAA8AAAACAAQAAAABABAAAAAAAAUAAAACABAAAAAAAAUAAAADABAAAAAAAAUAAAAEABAAAAAAAAUAAAAFABAAAAAAAAUAAAA=")
+tile_set = ExtResource("9_twj6w")
