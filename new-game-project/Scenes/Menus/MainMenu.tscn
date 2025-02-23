@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5buysxwg5j81"]
+[gd_scene load_steps=10 format=3 uid="uid://c5buysxwg5j81"]
 
 [ext_resource type="Texture2D" uid="uid://b3qpfi14383kx" path="res://Art/Endgame.png" id="1_i14kg"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_vruvc"]
 [ext_resource type="FontFile" uid="uid://bg4beac7wm06f" path="res://pixel_pirate.ttf" id="2_jhjhv"]
 [ext_resource type="Script" path="res://Scripts/settings_menu.gd" id="2_wrdxq"]
 [ext_resource type="Shader" path="res://Scenes/Menus/MainMenu.gdshader" id="3_e8h0j"]
+[ext_resource type="AudioStream" uid="uid://cdwxjmp18qaj8" path="res://Sounds/startGame.mp3" id="6_16u44"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08al0"]
 bg_color = Color(0.814542, 0.531856, 1.34766e-06, 1)
@@ -18,7 +19,7 @@ shader_parameter/height = 5.0
 shader_parameter/speed = 5.0
 shader_parameter/frequency = 20.0
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("startGame")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,6 +27,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vruvc")
+startGame = NodePath("AudioStreamPlayer2D")
 
 [node name="SettingsMenuCanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
@@ -141,6 +143,11 @@ theme_override_colors/font_color = Color(0.658824, 0.360784, 0.0470588, 1)
 theme_override_fonts/font = ExtResource("2_jhjhv")
 theme_override_font_sizes/font_size = 50
 text = "Moonwalk The Plank"
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_16u44")
 
 [connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
