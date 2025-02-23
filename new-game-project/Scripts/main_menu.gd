@@ -1,6 +1,6 @@
 extends Control
 
-@export var iExist: String
+@export var startGame: AudioStreamPlayer2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_node("SettingsMenuCanvasLayer").hide();
@@ -13,6 +13,8 @@ func _process(delta: float) -> void:
 
 func _on_new_game_pressed() -> void:
 	print("NewGame button pressed.")
+	startGame.play()
+	await get_tree().create_timer(3.5).timeout
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 
 
