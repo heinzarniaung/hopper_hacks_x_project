@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 @export var animatedSprite: AnimatedSprite2D
 var accel = Vector2(0, 0)
-var speed = 400
-var gravity = 400
+var speedCapX = 200
+var speedCapY = 20
+var gravity = 100
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,7 +16,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#print("x velocity " + str(velX))
 	#print("x accel " + str(accel.x))
-	
 	# apply physics vectors
 	velocity.x += accel.x
 	velocity.y += accel.y + gravity * delta
@@ -24,7 +24,10 @@ func _process(delta: float) -> void:
 
 	# Get accelerometer input for movement
 	velocity.x += accel.x
+	if (abs(velocity.x) > speedCapX):
+		velocity.x = speedCapX * (velocity.x / abs(velocity.x))
 	velocity.y += accel.y
+	velocity.y = minf(abs(velocity.y), speedCapY)
 	# apply physics
 	move_and_slide()
 	# Play animation based on angular velocity

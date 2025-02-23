@@ -9,10 +9,10 @@ var doubloons = 0
 func _ready() -> void:
 	#Add save load if there is time
 	if FileAccess.file_exists(saveFile):
-		var save = FileAccess.open(saveFile, FileAccess.READ)
-		var json_string = save.get_line()
+		var saved = FileAccess.open(saveFile, FileAccess.READ)
+		var json_string = saved.get_line()
 		var json = JSON.new()
-		var line = json.parse(json_string)
+		var jsonLine = json.parse(json_string)
 		var data = json.data
 		highScore = data.get("doubloons")
 		doubloons = data.get("highScore")
@@ -21,20 +21,19 @@ func _ready() -> void:
 	
 func save():
 	var save_dict = {
-		"highScore":highScore,
-		"doubloons":doubloons
+		"highScore": highScore,
+		"doubloons": doubloons
 	}
 	return save_dict
 
 func save_score():
-	var save = FileAccess.open(saveFile, FileAccess.WRITE)
+	var saved = FileAccess.open(saveFile, FileAccess.WRITE)
 	var data = save()
 	var json_data = JSON.stringify(data)
-	save.store_line(json_data)
+	saved.store_line(json_data)
 	
 func defeat():
 	print(score)
-	if(score > highScore):
+	if (score > highScore):
 		highScore = score
 	score = 0
-	
