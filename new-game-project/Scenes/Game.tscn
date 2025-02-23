@@ -19,8 +19,8 @@ windLeft = NodePath("Left")
 windRight = NodePath("Right")
 
 [node name="Sky" type="Sprite2D" parent="."]
-position = Vector2(565, 209)
-scale = Vector2(2.00174, 1.34877)
+position = Vector2(573.5, 253.75)
+scale = Vector2(2.05729, 1.625)
 texture = ExtResource("2_asmcl")
 
 [node name="Left" type="Node2D" parent="." node_paths=PackedStringArray("windArrays")]
@@ -66,8 +66,8 @@ tile_map_data = PackedByteArray("AAAMAAsAAwACAAIAAAANAAsAAwACAAIAAAAOAAsAAwACAAI
 tile_set = ExtResource("4_5i3mf")
 
 [node name="Water" type="Sprite2D" parent="."]
-position = Vector2(570, 489)
-scale = Vector2(3.04167, 2.24537)
+position = Vector2(573.5, 489)
+scale = Vector2(3.11198, 2.24537)
 texture = ExtResource("5_21p4n")
 
 [node name="Area2D" type="Area2D" parent="Water"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://c5buysxwg5j81"]
 
 [ext_resource type="Texture2D" uid="uid://b3qpfi14383kx" path="res://Art/Endgame.png" id="1_i14kg"]
-[ext_resource type="Script" path="res://Scenes/Menus/main_menu.gd" id="1_vruvc"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_vruvc"]
 [ext_resource type="FontFile" uid="uid://bg4beac7wm06f" path="res://pixel_pirate.ttf" id="2_jhjhv"]
-[ext_resource type="Script" path="res://Scenes/Menus/settings_menu.gd" id="2_wrdxq"]
+[ext_resource type="Script" path="res://Scripts/settings_menu.gd" id="2_wrdxq"]
 [ext_resource type="Shader" path="res://Scenes/Menus/MainMenu.gdshader" id="3_e8h0j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08al0"]
@@ -26,12 +26,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vruvc")
+iExist = "yes "
 
 [node name="SettingsMenuCanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
 
 [node name="SettingsMenu" type="Control" parent="SettingsMenuCanvasLayer"]
-visible = false
 visibility_layer = 513
 layout_mode = 3
 anchors_preset = 15
