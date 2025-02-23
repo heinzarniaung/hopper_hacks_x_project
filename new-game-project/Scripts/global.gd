@@ -15,6 +15,7 @@ func _ready() -> void:
 		var json_string = saved.get_line()
 		var json = JSON.new()
 		var jsonLine = json.parse(json_string)
+		print(json_string)
 		var data = json.data
 		highScore = data.get("doubloons")
 		doubloons = data.get("highScore")
@@ -26,7 +27,9 @@ func _ready() -> void:
 func save():
 	var save_dict = {
 		"highScore": highScore,
-		"doubloons": doubloons
+		"doubloons": doubloons,
+		"chosenPlayer": chosenPlayer,
+		"unlockedPlayers": unlockedPlayers
 	}
 	return save_dict
 

@@ -6,11 +6,6 @@ func _ready() -> void:
 	get_node("SettingsMenuCanvasLayer").hide();
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	print("test")
-	pass
-
 func _on_new_game_pressed() -> void:
 	print("NewGame button pressed.")
 	startGame.play()
