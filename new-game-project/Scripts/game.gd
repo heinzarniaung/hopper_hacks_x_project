@@ -20,7 +20,7 @@ var wind_variation = 5
 #allows for different inputs
 var inputAccel = 0
 
-var max_accel = 20
+var max_accel = 50
 var gravity = 400
 
 # Called when the node enters the scene tree for the first time.
@@ -51,7 +51,10 @@ func _process(delta: float) -> void:
 		var newCoin = coin.instantiate()
 		add_child(newCoin)
 		newCoin.position = coinSpawn.position
-		wind_strength = wind_rng.randf_range(- wind_variation, wind_variation)
+		var direction = wind_rng.randi_range(0,1)
+		if(direction == 0):
+			direction = -1
+		wind_strength = (wind_rng.randf_range(0, wind_variation) + 5)*direction
 		time_till_next = (wind_rng.randf_range(0, 1) * 5) + 10
 		if (wind_strength > 0):
 			activateWindLeft()
