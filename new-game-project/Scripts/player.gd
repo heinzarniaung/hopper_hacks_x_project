@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var animatedSprite: AnimatedSprite2D
 var accel = Vector2(0, 0)
 var speedCapX = 200
-var speedCapY = 20
+var speedCapY = 40
 var gravity = 100
 
 

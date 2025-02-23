@@ -1,8 +1,10 @@
 extends Node
 
-@export var windLeft = Node2D
-@export var windRight = Node2D
-@export var scoreText = RichTextLabel
+@export var windLeft: Node2D
+@export var windRight: Node2D
+@export var scoreText: RichTextLabel
+@export var seagulls: AudioStreamPlayer2D
+@export var defeat:AudioStreamPlayer2D
 var player
 
 var time_elapsed = 0 # in seconds
@@ -30,7 +32,8 @@ func death():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	time_elapsed += delta
-	Global.score += delta
+	if(!defeat.playing):
+		Global.score += delta
 	scoreText.text = "Score: " + str(int(Global.score))
 	# stub - will be retrieved from gyroscope input
 	var gyro_x_accel = 0
@@ -42,6 +45,7 @@ func _process(delta: float) -> void:
 		#print("wind!")
 		# enable wind
 		time_elapsed = 0
+		seagulls.play()
 		wind_strength = wind_rng.randf_range(- wind_variation, wind_variation)
 		time_till_next = (wind_rng.randf_range(0, 1) * 5) + 10
 		if (wind_strength > 0):
@@ -77,6 +81,8 @@ func turnOffWind():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	defeat.play()
+	await get_tree().create_timer(2).timeout
 	call_deferred("death")
 	body.queue_free()
 	pass # Replace with function body.

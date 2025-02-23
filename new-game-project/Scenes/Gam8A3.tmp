@@ -18,13 +18,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6t8yk"]
 size = Vector2(397.479, 28.2598)
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("windLeft", "windRight", "scoreText", "seagulls", "defeat")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("windLeft", "windRight", "scoreText", "seagulls")]
 script = ExtResource("1_mhebs")
 windLeft = NodePath("Left")
 windRight = NodePath("Right")
 scoreText = NodePath("RichTextLabel")
 seagulls = NodePath("Seagulls")
-defeat = NodePath("Splash")
 
 [node name="Background" type="Node2D" parent="."]
 
