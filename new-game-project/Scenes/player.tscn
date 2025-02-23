@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://baacxuhbnjo4f"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_33bar"]
-[ext_resource type="Texture2D" uid="uid://u0cwpp2y2h8" path="res://Art/Pirate4Walk.png" id="2_adjo2"]
+[ext_resource type="Texture2D" uid="uid://u0cwpp2y2h8" path="res://Art/Skins/Pirate4Walk.png" id="2_adjo2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7tqi"]
 size = Vector2(39, 54)
@@ -46,10 +46,9 @@ animations = [{
 }]
 metadata/_edit_group_ = true
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite")]
+[node name="Player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_33bar")
-animatedSprite = NodePath("PirateSprite")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

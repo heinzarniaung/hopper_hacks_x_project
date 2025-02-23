@@ -3,10 +3,10 @@ extends Node
 var saveFile = "highscore.save"
 var score = 0
 var highScore = 0
-var chosenPlayer = 0
-var unlockedPlayers = ["default"]
+var chosenPlayer = "regular"
+var unlockedPlayers = [true, false, false]
 #Use this for unlocks if time permits
-var doubloons = 0
+var doubloons = 50
 
 func _ready() -> void:
 	#Add save load if there is time

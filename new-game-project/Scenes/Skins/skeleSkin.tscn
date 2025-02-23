@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://buncafrldf6od"]
+
+[ext_resource type="Texture2D" uid="uid://b84nts07hrx1y" path="res://Art/Skins/Pirate5Walk.png" id="1_00xjr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6u4m"]
+atlas = ExtResource("1_00xjr")
+region = Rect2(0, 0, 400, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l84fy"]
+atlas = ExtResource("1_00xjr")
+region = Rect2(400, 0, 400, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n772n"]
+atlas = ExtResource("1_00xjr")
+region = Rect2(400, 500, 400, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yvn3e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6u4m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l84fy")
+}],
+"loop": true,
+"name": &"tilt_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n772n")
+}],
+"loop": true,
+"name": &"tilt_right",
+"speed": 5.0
+}]
+
+[node name="SkeleSkin" type="AnimatedSprite2D"]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_yvn3e")
+animation = &"tilt_right"

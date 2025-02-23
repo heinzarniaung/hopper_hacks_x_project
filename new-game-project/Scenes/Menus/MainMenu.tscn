@@ -26,7 +26,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vruvc")
-iExist = null
 
 [node name="SettingsMenuCanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
@@ -109,7 +108,7 @@ size_flags_vertical = 3
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("2_jhjhv")
 theme_override_font_sizes/font_size = 25
-text = "Settings"
+text = "Choose Skin"
 
 [node name="Leaderboard" type="Button" parent="VBoxContainer"]
 layout_mode = 2

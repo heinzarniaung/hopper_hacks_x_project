@@ -19,7 +19,7 @@ func _on_new_game_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	get_node("SettingsMenuCanvasLayer").show();
+	get_tree().change_scene_to_file("res://Scenes/SkinSelection.tscn")
 	print("Settings button pressed.");
 
 func _on_leaderboard_pressed() -> void:

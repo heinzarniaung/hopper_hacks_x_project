@@ -1,16 +1,20 @@
 extends CharacterBody2D
 
-@export var animatedSprite: AnimatedSprite2D
 var accel = Vector2(0, 0)
 var speedCapX = 200
 var speedCapY = 40
 var gravity = 100
+var animatedSprite: AnimatedSprite2D
+var sprite = load("res://Scenes/Skins/" + Global.chosenPlayer + "Skin.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#velocity.x = 50
 	#velocity.y = 50
+	var playerSprite = sprite.instantiate()
+	add_child(playerSprite)
+	animatedSprite = playerSprite
 	pass # Replace with function body.
 
 func _process(delta: float) -> void:
