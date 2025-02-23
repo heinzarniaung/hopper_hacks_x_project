@@ -11,9 +11,9 @@ var wind_rng = RandomNumberGenerator.new()
 var wind_chance = 0.1
 var wind_strength = 0
 var wind_duration = 10
-var wind_variation = 100
+var wind_variation = 5
 
-var max_speed = 400
+var max_speed = 100
 var gravity = 400
 
 # Called when the node enters the scene tree for the first time.
@@ -48,7 +48,10 @@ func _process(delta: float) -> void:
 		turnOffWind()
 	player.accel.x = wind_strength + Input.get_accelerometer().normalized().x * max_speed
 	player.accel.y = gravity
-	
+	if Input.is_action_pressed("ui_left"):
+		player.accel.x = -5
+	elif Input.is_action_pressed("ui_right"):
+		player.accel.x =  5
 
 func activateWindLeft():
 	windLeft.visible = true

@@ -24,39 +24,41 @@ scale = Vector2(2.00174, 1.34877)
 texture = ExtResource("2_asmcl")
 
 [node name="Left" type="Node2D" parent="." node_paths=PackedStringArray("windArrays")]
+visible = false
 script = ExtResource("2_hijoe")
 windArrays = [NodePath("Wind"), NodePath("Wind2"), NodePath("Wind3"), NodePath("Wind4")]
 
 [node name="Wind" parent="Left" instance=ExtResource("3_aqs11")]
-position = Vector2(308, 217)
+position = Vector2(489.1, 260.3)
 
 [node name="Wind2" parent="Left" instance=ExtResource("3_aqs11")]
-position = Vector2(210, 149)
+position = Vector2(391.1, 192.3)
 
 [node name="Wind3" parent="Left" instance=ExtResource("3_aqs11")]
-position = Vector2(119, 214)
+position = Vector2(300.1, 257.3)
 
 [node name="Wind4" parent="Left" instance=ExtResource("3_aqs11")]
-position = Vector2(265, 291)
+position = Vector2(446.1, 334.3)
 
 [node name="Right" type="Node2D" parent="." node_paths=PackedStringArray("windArrays")]
+visible = false
 script = ExtResource("2_hijoe")
 windArrays = [NodePath("Wind5"), NodePath("Wind6"), NodePath("Wind7"), NodePath("Wind8")]
 
 [node name="Wind5" parent="Right" instance=ExtResource("3_aqs11")]
-position = Vector2(954, 288)
+position = Vector2(865.1, 297.3)
 flip_h = true
 
 [node name="Wind6" parent="Right" instance=ExtResource("3_aqs11")]
-position = Vector2(955, 143)
+position = Vector2(866.1, 152.3)
 flip_h = true
 
 [node name="Wind7" parent="Right" instance=ExtResource("3_aqs11")]
-position = Vector2(829, 330)
+position = Vector2(740.1, 339.3)
 flip_h = true
 
 [node name="Wind8" parent="Right" instance=ExtResource("3_aqs11")]
-position = Vector2(798, 75)
+position = Vector2(709.1, 84.3)
 flip_h = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
