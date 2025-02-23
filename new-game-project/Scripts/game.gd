@@ -38,11 +38,11 @@ func _process(delta: float) -> void:
 		#print("wind!")
 		# enable wind
 		time_elapsed = 0
-		wind_strength = wind_rng.randf_range(-wind_variation,wind_variation)
-		time_till_next = (wind_rng.randf_range(0,1) * 5) + 10
-		if(wind_strength > 0):
+		wind_strength = wind_rng.randf_range(- wind_variation, wind_variation)
+		time_till_next = (wind_rng.randf_range(0, 1) * 5) + 10
+		if (wind_strength > 0):
 			activateWindLeft()
-		elif(wind_strength < 0):
+		elif (wind_strength < 0):
 			activateWindRight()
 	if time_elapsed > wind_duration:
 		turnOffWind()
@@ -51,7 +51,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_left"):
 		player.accel.x = -5
 	elif Input.is_action_pressed("ui_right"):
-		player.accel.x =  5
+		player.accel.x = 5
 
 func activateWindLeft():
 	windLeft.visible = true
@@ -73,6 +73,6 @@ func turnOffWind():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	death()
+	call_deferred("death")
 	body.queue_free()
 	pass # Replace with function body.

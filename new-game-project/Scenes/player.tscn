@@ -58,6 +58,3 @@ shape = SubResource("RectangleShape2D_l7tqi")
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_5yl7u")
 animation = &"idle"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, -100)
