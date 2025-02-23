@@ -32,6 +32,7 @@ iExist = "yes "
 layer = 100
 
 [node name="SettingsMenu" type="Control" parent="SettingsMenuCanvasLayer"]
+visible = false
 visibility_layer = 513
 layout_mode = 3
 anchors_preset = 15
@@ -140,7 +141,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.658824, 0.360784, 0.0470588, 1)
 theme_override_fonts/font = ExtResource("2_jhjhv")
 theme_override_font_sizes/font_size = 50
-text = "Walk the plank, matey!"
+text = "Moonwalk The Plank"
 
 [connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
