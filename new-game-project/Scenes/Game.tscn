@@ -18,13 +18,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6t8yk"]
 size = Vector2(397.479, 28.2598)
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("windLeft", "windRight", "scoreText", "seagulls", "defeat")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("windLeft", "windRight", "scoreText", "seagulls", "defeat", "spawnCoins")]
 script = ExtResource("1_mhebs")
 windLeft = NodePath("Left")
 windRight = NodePath("Right")
 scoreText = NodePath("RichTextLabel")
-seagulls = NodePath("Seagulls")
-defeat = NodePath("Splash")
+seagulls = NodePath("Audio/Seagulls")
+defeat = NodePath("Audio/Splash")
+spawnCoins = [NodePath("CoinSpawns/CoinSpawn1"), NodePath("CoinSpawns/CoinSpawn2"), NodePath("CoinSpawns/CoinSpawn3"), NodePath("CoinSpawns/CoinSpawn4")]
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -100,9 +101,9 @@ texture = ExtResource("5_21p4n")
 position = Vector2(-4.10956, 4.1299)
 shape = SubResource("RectangleShape2D_6t8yk")
 
-[node name="Sealife" type="Sprite2D" parent="."]
-position = Vector2(585, 511)
-scale = Vector2(3.0651, 1.66667)
+[node name="Sealife" type="Sprite2D" parent="Water"]
+position = Vector2(3.69539, 9.79794)
+scale = Vector2(0.984936, 0.74227)
 texture = ExtResource("6_4sn6e")
 
 [node name="Player" parent="." instance=ExtResource("8_xawga")]
@@ -127,17 +128,33 @@ theme_override_fonts/normal_font = ExtResource("11_8l26j")
 theme_override_font_sizes/normal_font_size = 32
 text = "Score: 0"
 
-[node name="Splash" type="AudioStreamPlayer2D" parent="."]
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Splash" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("12_4dc2y")
 
-[node name="Seagulls" type="AudioStreamPlayer2D" parent="."]
+[node name="Seagulls" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("12_g0scv")
 
-[node name="Music" type="AudioStreamPlayer2D" parent="."]
+[node name="Music" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("12_3mm2u")
 volume_db = -2.0
 autoplay = true
 
-[node name="AudioListener2D" type="AudioListener2D" parent="Music"]
+[node name="AudioListener2D" type="AudioListener2D" parent="Audio/Music"]
+
+[node name="CoinSpawns" type="Node2D" parent="."]
+
+[node name="CoinSpawn1" type="Node2D" parent="CoinSpawns"]
+position = Vector2(369, 406)
+
+[node name="CoinSpawn2" type="Node2D" parent="CoinSpawns"]
+position = Vector2(846, 408)
+
+[node name="CoinSpawn3" type="Node2D" parent="CoinSpawns"]
+position = Vector2(295, 407)
+
+[node name="CoinSpawn4" type="Node2D" parent="CoinSpawns"]
+position = Vector2(952, 408)
 
 [connection signal="body_entered" from="Water/Area2D" to="." method="_on_area_2d_body_entered"]

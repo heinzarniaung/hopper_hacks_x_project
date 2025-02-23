@@ -4,7 +4,9 @@ extends Node
 @export var windRight: Node2D
 @export var scoreText: RichTextLabel
 @export var seagulls: AudioStreamPlayer2D
-@export var defeat:AudioStreamPlayer2D
+@export var defeat: AudioStreamPlayer2D
+@export var spawnCoins: Array[Node2D]
+@onready var coin = preload("res://Scenes/coin.tscn")
 var player
 
 var time_elapsed = 0 # in seconds
@@ -32,20 +34,21 @@ func death():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	time_elapsed += delta
-	if(!defeat.playing):
+	if (!defeat.playing):
 		Global.score += delta
 	scoreText.text = "Score: " + str(int(Global.score))
 	# stub - will be retrieved from gyroscope input
 	var gyro_x_accel = 0
 	var new_x_accel = gyro_x_accel
-	
-	#print(time_elapsed)
-
 	if time_elapsed > time_till_next:
 		#print("wind!")
 		# enable wind
 		time_elapsed = 0
 		seagulls.play()
+		var coinSpawn = spawnCoins[wind_rng.randi_range(0, 3)]
+		var newCoin = coin.instantiate()
+		add_child(newCoin)
+		newCoin.position = coinSpawn.position
 		wind_strength = wind_rng.randf_range(- wind_variation, wind_variation)
 		time_till_next = (wind_rng.randf_range(0, 1) * 5) + 10
 		if (wind_strength > 0):
@@ -56,6 +59,7 @@ func _process(delta: float) -> void:
 		turnOffWind()
 	player.accel.x = wind_strength + Input.get_accelerometer().normalized().x * max_speed
 	player.accel.y = gravity
+
 	if Input.is_action_pressed("ui_left"):
 		player.accel.x = -5
 	elif Input.is_action_pressed("ui_right"):

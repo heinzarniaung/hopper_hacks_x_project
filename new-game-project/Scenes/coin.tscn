@@ -1,0 +1,141 @@
+[gd_scene load_steps=21 format=3 uid="uid://clhs818g7l6yl"]
+
+[ext_resource type="Texture2D" uid="uid://cmvmlmwwlg027" path="res://Art/coin1_16x16.png" id="1_8lei4"]
+[ext_resource type="Script" path="res://Scripts/coin.gd" id="1_ng7qa"]
+[ext_resource type="AudioStream" uid="uid://db5iunqywkm1t" path="res://Sounds/pickup.mp3" id="2_tdqad"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfivd"]
+size = Vector2(14, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oy4o"]
+atlas = ExtResource("1_8lei4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihq6l"]
+atlas = ExtResource("1_8lei4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bngt"]
+atlas = ExtResource("1_8lei4")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uubo1"]
+atlas = ExtResource("1_8lei4")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guc7m"]
+atlas = ExtResource("1_8lei4")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rligj"]
+atlas = ExtResource("1_8lei4")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy51m"]
+atlas = ExtResource("1_8lei4")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kc3ir"]
+atlas = ExtResource("1_8lei4")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfgsq"]
+atlas = ExtResource("1_8lei4")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpn7w"]
+atlas = ExtResource("1_8lei4")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nsdp"]
+atlas = ExtResource("1_8lei4")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56xww"]
+atlas = ExtResource("1_8lei4")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brwiv"]
+atlas = ExtResource("1_8lei4")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6xu7"]
+atlas = ExtResource("1_8lei4")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrvy8"]
+atlas = ExtResource("1_8lei4")
+region = Rect2(224, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mik8t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7oy4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihq6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bngt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uubo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_guc7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rligj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy51m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kc3ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfgsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpn7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nsdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56xww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brwiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6xu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrvy8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 50.0
+}]
+
+[node name="Coin" type="Area2D" node_paths=PackedStringArray("pickup", "animation")]
+script = ExtResource("1_ng7qa")
+pickup = NodePath("Pickup")
+animation = NodePath("AnimatedSprite2D")
+
+[node name="Pickup" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-0.5, -1)
+stream = ExtResource("2_tdqad")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_lfivd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mik8t")
+animation = &"idle"
+frame_progress = 0.643782
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
