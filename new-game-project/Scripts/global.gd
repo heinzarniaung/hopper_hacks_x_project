@@ -3,6 +3,8 @@ extends Node
 var saveFile = "highscore.save"
 var score = 0
 var highScore = 0
+var chosenPlayer = 0
+var unlockedPlayers = ["default"]
 #Use this for unlocks if time permits
 var doubloons = 0
 
@@ -16,6 +18,8 @@ func _ready() -> void:
 		var data = json.data
 		highScore = data.get("doubloons")
 		doubloons = data.get("highScore")
+		chosenPlayer = data.get("chosenPlayer")
+		unlockedPlayers = data.get("unlockedPlayers")
 			
 	pass # Replace with function body.
 	

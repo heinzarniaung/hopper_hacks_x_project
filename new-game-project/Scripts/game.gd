@@ -16,7 +16,7 @@ var wind_rng = RandomNumberGenerator.new()
 var wind_chance = 0.1
 var wind_strength = 0
 var wind_duration = 10
-var wind_variation = 10
+var wind_variation = 8
 #allows for different inputs
 var inputAccel = 0
 

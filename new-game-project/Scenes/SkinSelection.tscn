@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3riimoqfdre7"]
 
-[ext_resource type="Texture2D" uid="uid://dptgs64loi4k2" path="res://Art/SkinSelect/1.png" id="1_ttslr"]
-[ext_resource type="Texture2D" uid="uid://c42c8stjxhojx" path="res://Art/SkinSelect/2.png" id="2_gsu40"]
-[ext_resource type="Texture2D" uid="uid://c82x6ocy7qe8a" path="res://Art/SkinSelect/3.png" id="3_f7c0n"]
-[ext_resource type="Texture2D" uid="uid://bf13hw5da8shv" path="res://Art/SkinSelect/4.png" id="4_fjvlm"]
+[ext_resource type="Texture2D" uid="uid://cdanxg63mxf8t" path="res://Art/SkinSelect/1.png" id="1_ttslr"]
+[ext_resource type="Texture2D" uid="uid://bni1fwo356wt7" path="res://Art/SkinSelect/2.png" id="2_gsu40"]
+[ext_resource type="Texture2D" uid="uid://dp0cywiqool81" path="res://Art/SkinSelect/3.png" id="3_f7c0n"]
+[ext_resource type="Texture2D" uid="uid://c7laoonmthh1w" path="res://Art/SkinSelect/4.png" id="4_fjvlm"]
 
 [node name="SkinSelection" type="Node2D"]
 
