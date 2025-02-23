@@ -47,6 +47,7 @@ animations = [{
 metadata/_edit_group_ = true
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite")]
+scale = Vector2(2, 2)
 script = ExtResource("1_33bar")
 animatedSprite = NodePath("PirateSprite")
 metadata/_edit_group_ = true

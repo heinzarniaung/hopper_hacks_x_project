@@ -1,8 +1,9 @@
 extends Control
 
-
+@export var label: RichTextLabel
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	label.text = "HighScore: " + str(int(Global.highScore))
 	pass # Replace with function body.
 
 

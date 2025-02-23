@@ -2,6 +2,7 @@ extends Node
 
 @export var windLeft = Node2D
 @export var windRight = Node2D
+@export var scoreText = RichTextLabel
 var player
 
 var time_elapsed = 0 # in seconds
@@ -11,7 +12,7 @@ var wind_rng = RandomNumberGenerator.new()
 var wind_chance = 0.1
 var wind_strength = 0
 var wind_duration = 10
-var wind_variation = 10
+var wind_variation = 20
 
 var max_speed = 100
 var gravity = 400
@@ -22,12 +23,15 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func death():
+	Global.defeat()
 	Global.save_score()
 	get_tree().change_scene_to_file("res://Scenes/EndScreen.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	time_elapsed += delta
+	Global.score += delta
+	scoreText.text = "Score: " + str(int(Global.score))
 	# stub - will be retrieved from gyroscope input
 	var gyro_x_accel = 0
 	var new_x_accel = gyro_x_accel
